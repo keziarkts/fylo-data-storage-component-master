@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+    /* COLORS */
+    --clr-pale-blue: hsl(243, 100%, 93%);
+    --clr-grayish-blue: hsl(229, 7%, 55%);
+    --clr-dark-blue: hsl(228, 56%, 26%);
+    --clr-very-dark-blue: hsl(229, 57%, 11%);
+
+    /* GRADIENT */
+    --gradient-1: hsl(6, 100%, 80%);
+    --gradient-2: hsl(335, 100%, 65%);
+
+    /* BODY COPY */
+    --fs-body: 0.875rem; /*14px*/
+
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+    font-size: var(--fs-body);
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--clr-very-dark-blue);
+    background-image: url(images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: center 320px;
+    background-size: contain;
+}
+
+/* main content: */
+.main-content {
+    display: flex;
+    gap: 30px;
+    align-items: end;
+}
+
+/* left content */
+.left-content {
+    background-color: var(--clr-dark-blue);
+    padding: 40px 135px 40px 40px;
+    border-radius: 10px 100px 10px 10px;
+}
+.left-content .logo {
+    margin-bottom: 25px;
+}
+.icons-list {
+    list-style-type: none;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.icons-list li {
+    display: flex;
+    background-color: var(--clr-very-dark-blue);
+    height: 45px;
+    width: 45px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.icons-list li:hover {
+    cursor: pointer;
+}
+
+/* right content */
+.right-content {
+    background-color: var(--clr-dark-blue);
+    height: 155px;
+    min-width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+}
+.right-content .text {
+    color: var(--clr-pale-blue);
+}
+.right-content .bold-815-gb {
+    font-weight: var(--fw-700);
+}
+.pop-up-message {
+    background-color: white;
+    border-radius: 10px;
+    padding: 18px 34px;
+    position: absolute;
+    z-index: 1000;
+    margin-top: -95px;
+    margin-left: 270px;
+
+    text-transform: uppercase;
+    color: var(--clr-grayish-blue);
+    font-size: 0.65rem;
+    font-weight: var(--fw-700);
+    display: flex;
+    align-items: center;
+}
+.pop-up-message .bold-185 {
+    font-size: 2rem;
+    margin-right: 5px;
+    color: var(--clr-very-dark-blue);
+}
+.pop-up-message:after {
+    content: "";
+    position: absolute;
+    top: 65px;
+    left: 144px;
+    width: 0;
+    height: 0;
+    border-top: 24px solid white;
+    border-left: 24px solid transparent;
+}
+.progress-bar-wrapper {
+    background-color: var(--clr-very-dark-blue);
+    width: 100%;
+    border-radius: 12px;
+    margin: 12px 0 8px 0;
+    padding: 0.15rem;
+    position: relative;
+}
+.progress-bar-used {
+    background: linear-gradient(var(--gradient-1), var(--gradient-2));
+    width: 75%;
+    height: 0.95rem;
+    padding: 0.12rem;
+    text-align: right;
+    border-radius: 12px;
+    position: relative;
+}
+.circle {
+    margin: 0.8px;
+    position: relative;
+    left: 96%;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: white;
+    transition: .3s;
+}
+.range-storage {
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-pale-blue);
+    font-weight: var(--fw-700);
+}
+
+
+/************ 
+        RESPONSIVE - MOBILE 
+                    *************/
+@media(max-width: 880px) {
+    body {
+        background-image: url(images/bg-mobile.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .main-content {
+        display: block;
+        margin: 0 auto;
+        max-width: 370px;
+    }
+
+    .left-content {
+        padding: 25px 110px 35px 25px;
+        margin: 0 auto;
+    }
+
+    .right-content {
+        min-width: 330px;
+        margin: 16px auto;
+    }
+    .right-content .text {
+        text-align: center;
+    }
+    .pop-up-message {
+        margin-top: 70px;
+        margin-left: 50px;
+    }
+    .pop-up-message:after {
+        content: none;
+    }
+    .circle {
+        left: 94%;
+    }
+
+}
